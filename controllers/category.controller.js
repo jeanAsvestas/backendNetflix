@@ -36,8 +36,9 @@ exports.updateCategory = (req, res) => {
                 return;
 
             })
+        } else {
+            res.status(200).send({ message: `Category with id: ${category.id} was updated successfully` });
         }
-        res.status(200).send({ message: `Category with id: ${category.id} was updated successfully` })
 
     }).catch(err => {
         res.status(500).send({ message: err.message });

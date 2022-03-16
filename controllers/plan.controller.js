@@ -68,15 +68,16 @@ exports.updatePlan = (req, res) => {
             plan.duration = req.body.duration;
             plan.price = req.body.price;
             plan.save().then((plan) => {
-                res.status(200).send({ plan })
+                res.status(200).send({ message: `Plan with id: ${plan.id} was updated successfully` })
                 //return;
             }).catch(err => {
                 res.status(500).send({ message: err.message });
                 //return;
 
             })
+        } else {
+            res.status(200).send({ message: `Plan with id: ${plan.id} has changed id` });
         }
-        res.status(200).send({ message: `Plan with id: ${plan.id} was updated successfully` })
 
     }).catch(err => {
         res.status(500).send({ message: err.message });

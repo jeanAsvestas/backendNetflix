@@ -64,19 +64,17 @@ exports.updateMovie = (req, res) => {
             movie.prodCountry = req.body.prodCountry;
             movie.path = req.body.path;
             movie.save().then(movie => {
-                res.status(200).send({message: `A new movie with id and title  was created`})
-                return;
+                res.status(200).send({ message: `movie with id: ${movie.id} was updated successfully` });
+                return 
             }).catch(err => {
                 res.status(500).send({ message: err.message });
-                return;
-                
+                return 
             })
+        } else {
+            res.status(200).send({ message: `movie with id: ${movie.id} has changed` });
         }
-        res.status(500).send({ message: err.message });
-        return;
     }).catch(err => {
-        res.status(500).send({ message: "no moovie found" });
-        return;
+        res.status(500).send({ message: err.message });
     });
 }
 
