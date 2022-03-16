@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+      
+    <link href="../stylesheets/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <a class="btn btn-primary" role="button" href="/?id=<%=`${id}`%>" method="get">Home</a>
+    <a class="btn btn-primary" role="button" href="/movie/watch?id=<%=`${id}`%>" method="get">Watch movie</a>
+    <div class="login">
+        
+        <h1>Add Movie</h1>
+        <form action="/movie/add" method="post">
+            <label for="title">
+                <!-- font awesome icon -->
+                <i class="fas fa-user"></i>
+            </label>
+            <input type="text" name="title" placeholder="Title" id="title" required>
+            <label for="year">
+                <i class="fas fa-lock"></i>
+            </label>
+            <input type="number" name="year" placeholder="Year released" id="year" required>
+            <label for="path">
+                <i class="fas fa-lock"></i>
+            </label>
+            <input type="text" name="path" placeholder="Path" id="path" required>
+            
+            <input type="submit" value="Add">
+        </form>
+    </div>
+    <script src="https://kit.fontawesome.com/d4d829b8ad.js" crossorigin="anonymous"></script>
+</body>
+</html>

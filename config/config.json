@@ -1,0 +1,24 @@
+{
+  "development": {
+    "username": "team3",
+    "password": "Maria1804",
+    "database": "netflix",
+    "host": "ra1.anystream.eu",
+    "dialect": "mysql",
+    "port": "1804"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

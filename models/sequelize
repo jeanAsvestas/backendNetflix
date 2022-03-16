@@ -1,0 +1,12 @@
+npx sequelize model:generate --name User --attributes firstName:string,lastName:string,email:string,password:string,DOB:date,isAdmin:boolean
+npx sequelize model:generate --name Plan --attributes name:string,duration:integer,price:double
+npx sequelize model:generate --name OrderedPlan --attributes userId:integer,planId:integer,pricePaid:double,expiresAt:date
+npx sequelize model:generate --name Movie --attributes title:string,decription:string,length:string,year:integer,prodCountry:string
+npx sequelize model:generate --name WatchedMovie --attributes userId:integer,movieId:integer
+npx sequelize model:generate --name Category --attributes title:string
+npx sequelize model:generate --name MovieCategory --attributes movieId:integer,categoryId:integer
+npx sequelize model:generate --name CastAndCrew --attributes fullName:string
+npx sequelize model:generate --name Direct --attributes movieId:integer,castAndCrewId:integer
+npx sequelize model:generate --name Play --attributes movieId:integer,castAndCrewId:integer
+
+cmd lines for models.
