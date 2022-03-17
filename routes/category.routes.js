@@ -28,5 +28,11 @@ router.post('/delete',
     controller.deleteCategory
 );
 
+router.post('/categorizeMovie',
+    //authJWT.verifyToken,
+    //authJWT.isAdmin,
+    controller.categorizedMovie
+);
+
 
 module.exports = router;

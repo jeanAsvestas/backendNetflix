@@ -34,18 +34,20 @@ router.post('/watch',
     controller.moviePath
 );
 
-
+// Select all movies
 router.post('/read',
     //authJWT.verifyToken,
     controller.readMovies
 );
 
+// Update a movie
 router.post('/update',
     //authJWT.verifyToken,
     //authJWT.isAdmin,
     controller.updateMovie
 );
 
+// Delete a movie
 router.post('/delete',
     //authJWT.verifyToken,
     //authJWT.isAdmin,

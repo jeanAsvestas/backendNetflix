@@ -1,7 +1,9 @@
 const db = require("../models/index");
 const category = require("../models/category");
 const Category = db.sequelize.models.Category;
+const MovieCategory = db.sequelize.models.MovieCategory;
 
+// Add category
 exports.addCategory = (req, res) => {
     Category.create({
         title: req.body.title,
@@ -12,6 +14,21 @@ exports.addCategory = (req, res) => {
     });
 }
 
+// Movie categorazation
+exports.categorizedMovie = (req, res) => {
+    MovieCategory.create({
+        MovieId: req.body.movieId,
+        CategoryId: req.body.categoryId
+    }).then(categorizedmovie =>{
+        res.status(200).send({message: `Movie with id: ${req.body.movieId} was categorized succesfully`});
+        return;
+    }).catch(err => {
+        res.status(500).send({message: err.message});
+    });
+}
+
+
+// Select all categories
 exports.readCategories = (req, res) => {
     Category.findAll().then((categories) => {
         res.status(200).send({categories});
@@ -20,6 +37,7 @@ exports.readCategories = (req, res) => {
     });
 }
 
+// Update category
 exports.updateCategory = (req, res) => {
     Category.findOne({
         where: {
@@ -45,6 +63,7 @@ exports.updateCategory = (req, res) => {
     });
 }
 
+// Delete category
 exports.deleteCategory = (req, res) => {
     Category.destroy({
         where: {
