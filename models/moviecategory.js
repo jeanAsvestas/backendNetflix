@@ -16,6 +16,12 @@ module.exports = (sequelize, DataTypes) => {
   MovieCategory.init({
     // movieId: DataTypes.INTEGER,
     // categoryId: DataTypes.INTEGER
+    id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
   }, {
     sequelize,
     modelName: 'MovieCategory',

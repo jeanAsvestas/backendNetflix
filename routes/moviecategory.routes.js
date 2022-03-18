@@ -1,32 +1,31 @@
 var express = require('express');
 var router = express.Router();
 const db = require("../models/index");
-const controller = require('../controllers/category.controller');
+const controller = require('../controllers/moviecategory.controller');
 const authJWT = require('../middlewares/authJWT');
 
-router.post('/add', 
+router.post('/add',
     //authJWT.verifyToken,
     //authJWT.isAdmin,
-    controller.addCategory    
+    controller.addMovieCategory
 );
 
 router.post('/read',
     //authJWT.verifyToken,
     //authJWT.isAdmin,
-    controller.readCategories
+    controller.readMovieCategory
 );
 
 router.post('/update',
     //authJWT.verifyToken,
     //authJWT.isAdmin,
-    controller.updateCategory
+    controller.updateMovieCategory
 );
 
 router.post('/delete',
     //authJWT.verifyToken,
     //authJWT.isAdmin,
-    controller.deleteCategory
+    controller.deleteMovieCategory
 );
 
-
- module.exports = router;
+module.exports = router;

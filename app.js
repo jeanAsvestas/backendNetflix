@@ -24,6 +24,7 @@ var movieRouter = require('./routes/movie.routes');
 var authRouter = require ('./routes/auth.routes')
 var userRouter = require ('./routes/user.routes');
 var categoryRouter = require('./routes/category.routes');
+var moviecategoryRouter = require('./routes/moviecategory.routes');
 const category = require('./models/category');
 var app = express();
 
@@ -66,6 +67,7 @@ app.use('/api/movie', movieRouter);
 app.use('/api/user/test', userRouter);  // not active 
 app.use('/api/auth', authRouter);
 app.use('/api/category', categoryRouter);
+app.use('/api/moviecategory', moviecategoryRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

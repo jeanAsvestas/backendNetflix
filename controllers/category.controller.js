@@ -1,7 +1,6 @@
 const db = require("../models/index");
 const category = require("../models/category");
 const Category = db.sequelize.models.Category;
-const MovieCategory = db.sequelize.models.MovieCategory;
 
 // Add category
 exports.addCategory = (req, res) => {
@@ -13,20 +12,6 @@ exports.addCategory = (req, res) => {
         res.status(500).send({ message: err.message });
     });
 }
-
-// Movie categorazation
-exports.categorizedMovie = (req, res) => {
-    MovieCategory.create({
-        MovieId: req.body.movieId,
-        CategoryId: req.body.categoryId
-    }).then(categorizedmovie =>{
-        res.status(200).send({message: `Movie with id: ${req.body.movieId} was categorized succesfully`});
-        return;
-    }).catch(err => {
-        res.status(500).send({message: err.message});
-    });
-}
-
 
 // Select all categories
 exports.readCategories = (req, res) => {
