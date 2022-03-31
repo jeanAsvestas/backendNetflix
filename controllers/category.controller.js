@@ -32,7 +32,7 @@ exports.updateCategory = (req, res) => {
         if (category.id == req.body.id) {
             category.title = req.body.title;
             category.save().then((category) => {
-                res.status(200).send({ category })
+                res.status(200).send({ message: `Category with id: ${category.id} was updated successfully` })
                 return;
             }).catch(err => {
                 res.status(500).send({ message: err.message });
@@ -40,7 +40,7 @@ exports.updateCategory = (req, res) => {
 
             })
         } else {
-            res.status(200).send({ message: `Category with id: ${category.id} was updated successfully` });
+            res.status(500).send({ message: `An unexpected error was occured with updating category with  id ${category.id}` });
         }
 
     }).catch(err => {

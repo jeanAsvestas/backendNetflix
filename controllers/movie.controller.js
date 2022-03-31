@@ -1,6 +1,7 @@
 const db = require("../models/index");
 const movie = require("../models/movie");
 const Movie = db.sequelize.models.Movie;
+const Category = db.sequelize.models.Category;
 const WatchedMovie = db.sequelize.models.WatchedMovie
 
 exports.addMovie = (req, res) => {
@@ -43,11 +44,26 @@ exports.moviePath = (req, res) => {
 }
 
 exports.readMovies = (req, res) => {
-    Movie.findAll().then(movies => {
-        res.status(200).send(movies)
-    }).catch(err => {
-        res.status(500).send({ message: err.message })
-    });
+    if (req.body.movie) {
+        Movie.findAll({
+            include: {
+                model: Category,
+                where: {
+                    title: req.body.movie
+                }
+            }
+        }).then(movies => {
+            res.status(200).send(movies)
+        }).catch(err => {
+            res.status(500).send({ message: err.message })
+        });
+    } else {
+        Movie.findAll().then(movies => {
+            res.status(200).send(movies)
+        }).catch(err => {
+            res.status(500).send({ message: err.message })
+        });
+    }
 }
 
 exports.updateMovie = (req, res) => {
@@ -71,7 +87,7 @@ exports.updateMovie = (req, res) => {
                 return 
             })
         } else {
-            res.status(200).send({ message: `movie with id: ${movie.id} has changed` });
+            res.status(500).send({ message: `An unexpected error was occured with updating movie with  id ${movie.id}` });
         }
     }).catch(err => {
         res.status(500).send({ message: err.message });

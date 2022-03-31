@@ -76,7 +76,7 @@ exports.updatePlan = (req, res) => {
 
             })
         } else {
-            res.status(200).send({ message: `Plan with id: ${plan.id} has changed id` });
+            res.status(500).send({ message: `An unexpected error was occured with updating plab with id ${plan.id}` });
         }
 
     }).catch(err => {

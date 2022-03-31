@@ -39,6 +39,11 @@ router.post('/read',
     //authJWT.verifyToken,
     controller.readMovies
 );
+// //Select by category
+// router.post('/read/',
+//     //authJWT.verifyToken,
+//     controller.readMovies
+// );
 
 // Update a movie
 router.post('/update',
