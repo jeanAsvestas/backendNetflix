@@ -20,17 +20,11 @@ router.post('/add',
     controller.addMovie
 );
 
-//not for api use
-router.get('/watch', async function (req, res) {
-    let movies = await Movie.findAll();
-    res.render('watchmovie', {
-        list: movies
-    })
-});
-router.post('/watch',
-    authJWT.verifyToken,
-    contr.readPlan,
-    controller.watchedMovie,
+
+router.get('/watch/:id',
+    //authJWT.verifyToken,
+    //contr.readPlan,
+    //controller.watchedMovie,
     controller.moviePath
 );
 

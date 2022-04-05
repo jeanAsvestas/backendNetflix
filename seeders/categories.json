@@ -1,0 +1,52 @@
+{
+    "categories": [
+        {
+            "id": "1",
+            "title": "Adventure",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "2",
+            "title": "Comedy",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "3",
+            "title": "Horror",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "4",
+            "title": "Romance",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "5",
+            "title": "Sci-fi",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "6",
+            "title": "Crime",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "7",
+            "title": "Documentary",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "8",
+            "title": "Drama",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        }
+    ]
+}

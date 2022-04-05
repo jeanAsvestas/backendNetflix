@@ -11,7 +11,6 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      
       CastAndCrew.belongsToMany(models.Movie, { through: models.Direct });
       CastAndCrew.belongsToMany(models.Movie, { through: models.Play });
     }

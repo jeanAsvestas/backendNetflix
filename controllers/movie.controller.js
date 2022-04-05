@@ -32,19 +32,20 @@ exports.watchedMovie = (req, res, next) => {
 }
 
 exports.moviePath = (req, res) => {
+    console.log(req.params.id);
     Movie.findOne({
         where: {
-            id: req.body.movieId
+            id: req.params.id
         }
     }).then(movie => {
-        res.status(200).send({ path: movie.path })
+        res.status(200).send({ movie })
     }).catch(err => {
         res.status(500).send({ message: err.message })
     });
 }
 
 exports.readMovies = (req, res) => {
-    if (req.body.movie) {
+    if (req.body.movie && req.body.movie != "All") {
         Movie.findAll({
             include: {
                 model: Category,
@@ -58,7 +59,11 @@ exports.readMovies = (req, res) => {
             res.status(500).send({ message: err.message })
         });
     } else {
-        Movie.findAll().then(movies => {
+        Movie.findAll({
+            include: {
+                model: Category
+            }
+        }).then(movies => {
             res.status(200).send(movies)
         }).catch(err => {
             res.status(500).send({ message: err.message })

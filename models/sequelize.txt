@@ -1,7 +1,7 @@
 npx sequelize model:generate --name User --attributes firstName:string,lastName:string,email:string,password:string,DOB:date,isAdmin:boolean
 npx sequelize model:generate --name Plan --attributes name:string,duration:integer,price:double
 npx sequelize model:generate --name OrderedPlan --attributes userId:integer,planId:integer,pricePaid:double,expiresAt:date
-npx sequelize model:generate --name Movie --attributes title:string,description:string,length:string,year:integer,prodCountry:string
+npx sequelize model:generate --name Movie --attributes title:string,description:string,length:string,year:integer,prodCountry:string,titleImage:string,trailerImage:string,mainImage:string,trailer:string,movieContent:string 
 npx sequelize model:generate --name WatchedMovie --attributes userId:integer,movieId:integer
 npx sequelize model:generate --name Category --attributes title:string
 npx sequelize model:generate --name MovieCategory --attributes movieId:integer,categoryId:integer
@@ -10,3 +10,44 @@ npx sequelize model:generate --name Direct --attributes movieId:integer,castAndC
 npx sequelize model:generate --name Play --attributes movieId:integer,castAndCrewId:integer
 
 cmd lines for models.
+
+ CastAndCrew.belongsToMany(models.Movie, { through: models.Direct });
+      CastAndCrew.belongsToMany(models.Movie, { through: models.Play });
+
+
+      Category.belongsToMany(models.Movie, { through: models.MovieCategory });
+
+Movie.belongsToMany(models.User, { through: models.WatchedMovie });
+      Movie.belongsToMany(models.Category, { through: models.MovieCategory });
+      Movie.belongsToMany(models.CastAndCrew, { through: models.Direct });
+      Movie.belongsToMany(models.CastAndCrew, { through: models.Play });
+
+      MovieCategory
+       id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
+    OrderedPlan
+      id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },
+
+    plan
+
+     Plan.belongsToMany(models.User, { through: models.OrderedPlan });
+
+
+     User.belongsToMany(models.Plan, { through: models.OrderedPlan });
+      User.belongsToMany(models.Movie, { through: models.WatchedMovie });
+WatchedMovie
+      id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: DataTypes.INTEGER
+    },

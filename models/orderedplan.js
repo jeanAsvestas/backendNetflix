@@ -14,8 +14,6 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   OrderedPlan.init({
-    // userId: DataTypes.INTEGER,
-    // planId: DataTypes.INTEGER,
     id: {
       allowNull: false,
       autoIncrement: true,

@@ -1,4 +1,7 @@
 'use strict';
+
+const user = require("../models/user");
+
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('OrderedPlans', {
