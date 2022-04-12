@@ -5,16 +5,32 @@ const Category = db.sequelize.models.Category;
 const WatchedMovie = db.sequelize.models.WatchedMovie
 
 exports.addMovie = (req, res) => {
+    //console.log(req.body.movie.mainImage)
     Movie.create({
-        title: req.body.title,
-        year: req.body.year,
-        description: req.body.description,
-        length: req.body.length,
-        prodCountry: req.body.prodCountry,
-        path: req.body.path
+        title: req.body.movie.title,
+        description: req.body.movie.description,
+        length: req.body.movie.length,
+        year: req.body.movie.year,
+        prodCountry: req.body.movie.prodCountry,
+        titleImage: req.body.movie.titleImage,
+        trailerImage: req.body.movie.trailerImage,
+        mainImage: req.body.movie.mainImage,
+        trailer: req.body.movie.trailer,
+        movieContent: req.body.movie.movieContent
+        // title: req.body.title,
+        // description: req.body.description,
+        // length: `${req.body.length.split(":")[0]}h ${req.body.length.split(":")[1]}m`,
+        // year: req.body.year,
+        // prodCountry: req.body.prodCountry,
+        // titleImage: req.body.titleImage,
+        // trailerImage: req.body.trailerImage,
+        // //mainImage: req.body.mainImage[0].name,
+        // trailer: req.body.trailer,
+        // movieContent: req.body.movieContent
     }).then(movie => {
         res.send({ message: "Movie was added successfully!" });
     }).catch(err => {
+        console.log(err)
         res.status(500).send({ message: err.message });
     });
 }

@@ -17,56 +17,56 @@
         {
             "id": "3",
             "movieId": "3",
-            "categoryId": "5",
+            "categoryId": "1",
             "createdAt": "20220404100510",
             "updatedAt": "20220404100510"
         },
         {
             "id": "4",
             "movieId": "4",
-            "categoryId": "5",
+            "categoryId": "1",
             "createdAt": "20220404100510",
             "updatedAt": "20220404100510"
         },
         {
             "id": "5",
             "movieId": "5",
-            "categoryId": "5",
+            "categoryId": "1",
             "createdAt": "20220404100510",
             "updatedAt": "20220404100510"
         },
         {
             "id": "6",
             "movieId": "6",
-            "categoryId": "5",
+            "categoryId": "1",
             "createdAt": "20220404100510",
             "updatedAt": "20220404100510"
         },
         {
             "id": "7",
             "movieId": "7",
-            "categoryId": "5",
+            "categoryId": "1",
             "createdAt": "20220404100510",
             "updatedAt": "20220404100510"
         },
         {
             "id": "8",
             "movieId": "8",
-            "categoryId": "5",
+            "categoryId": "1",
             "createdAt": "20220404100510",
             "updatedAt": "20220404100510"
         },
         {
             "id": "9",
             "movieId": "9",
-            "categoryId": "5",
+            "categoryId": "1",
             "createdAt": "20220404100510",
             "updatedAt": "20220404100510"
         },
         {
             "id": "10",
             "movieId": "10",
-            "categoryId": "2",
+            "categoryId": "1",
             "createdAt": "20220404100510",
             "updatedAt": "20220404100510"
         },
@@ -80,58 +80,279 @@
         {
             "id": "12",
             "movieId": "12",
-            "categoryId": "3",
+            "categoryId": "2",
             "createdAt": "20220404100510",
             "updatedAt": "20220404100510"
         },
         {
             "id": "13",
             "movieId": "13",
-            "categoryId": "4",
+            "categoryId": "2",
             "createdAt": "20220404100510",
             "updatedAt": "20220404100510"
         },
         {
             "id": "14",
             "movieId": "14",
-            "categoryId": "6",
+            "categoryId": "2",
             "createdAt": "20220404100510",
             "updatedAt": "20220404100510"
         },
         {
             "id": "15",
             "movieId": "15",
-            "categoryId": "7",
+            "categoryId": "2",
             "createdAt": "20220404100510",
             "updatedAt": "20220404100510"
         },
         {
             "id": "16",
             "movieId": "16",
-            "categoryId": "8",
+            "categoryId": "2",
             "createdAt": "20220404100510",
             "updatedAt": "20220404100510"
         },
         {
             "id": "17",
             "movieId": "17",
-            "categoryId": "6",
+            "categoryId": "2",
             "createdAt": "20220404100510",
             "updatedAt": "20220404100510"
         },
         {
             "id": "18",
             "movieId": "18",
-            "categoryId": "7",
+            "categoryId": "2",
             "createdAt": "20220404100510",
             "updatedAt": "20220404100510"
         },
         {
             "id": "19",
-            "movieId": "18",
-            "categoryId": "8",
+            "movieId": "19",
+            "categoryId": "2",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "20",
+            "movieId": "20",
+            "categoryId": "2",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "21",
+            "movieId": "21",
+            "categoryId": "3",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "22",
+            "movieId": "22",
+            "categoryId": "3",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "23",
+            "movieId": "23",
+            "categoryId": "3",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "24",
+            "movieId": "24",
+            "categoryId": "3",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "25",
+            "movieId": "25",
+            "categoryId": "3",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "26",
+            "movieId": "26",
+            "categoryId": "3",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "27",
+            "movieId": "27",
+            "categoryId": "3",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "28",
+            "movieId": "28",
+            "categoryId": "3",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "29",
+            "movieId": "29",
+            "categoryId": "3",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "30",
+            "movieId": "30",
+            "categoryId": "3",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "31",
+            "movieId": "31",
+            "categoryId": "4",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "32",
+            "movieId": "32",
+            "categoryId": "4",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "33",
+            "movieId": "33",
+            "categoryId": "4",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "34",
+            "movieId": "34",
+            "categoryId": "4",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "35",
+            "movieId": "35",
+            "categoryId": "4",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "36",
+            "movieId": "36",
+            "categoryId": "4",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "37",
+            "movieId": "37",
+            "categoryId": "4",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "38",
+            "movieId": "38",
+            "categoryId": "4",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "39",
+            "movieId": "39",
+            "categoryId": "4",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "40",
+            "movieId": "40",
+            "categoryId": "4",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "41",
+            "movieId": "41",
+            "categoryId": "5",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "42",
+            "movieId": "42",
+            "categoryId": "5",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "43",
+            "movieId": "43",
+            "categoryId": "5",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "44",
+            "movieId": "44",
+            "categoryId": "5",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "45",
+            "movieId": "45",
+            "categoryId": "5",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "46",
+            "movieId": "46",
+            "categoryId": "5",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "47",
+            "movieId": "47",
+            "categoryId": "5",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "48",
+            "movieId": "48",
+            "categoryId": "5",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "49",
+            "movieId": "49",
+            "categoryId": "5",
+            "createdAt": "20220404100510",
+            "updatedAt": "20220404100510"
+        },
+        {
+            "id": "50",
+            "movieId": "50",
+            "categoryId": "5",
             "createdAt": "20220404100510",
             "updatedAt": "20220404100510"
         }
+        
+
+
+
     ]
 }

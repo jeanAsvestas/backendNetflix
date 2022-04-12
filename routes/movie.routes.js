@@ -8,11 +8,11 @@ const authJWT = require('../middlewares/authJWT')
 
 
 //not for api use
-router.get('/add', function (req, res) {
-    res.render('movie', {
-        id: req.query.id
-    });
-});
+// router.get('/add', function (req, res) {
+//     res.render('movie', {
+//         id: req.query.id
+//     });
+// });
 
 router.post('/add',
     //authJWT.verifyToken,
