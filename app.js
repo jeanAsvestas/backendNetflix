@@ -44,7 +44,7 @@ app.use('/login', loginRouter);
 app.use('/register', registerRouter);
 app.use('/api/plan', planRouter);
 app.use('/api/movie', movieRouter);
-app.use('/api/user/test', userRouter);  // not active 
+app.use('/api/user', userRouter);  // not active 
 app.use('/api/auth', authRouter);
 app.use('/api/category', categoryRouter);
 app.use('/api/moviecategory', moviecategoryRouter);

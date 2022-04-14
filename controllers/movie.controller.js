@@ -88,18 +88,22 @@ exports.readMovies = (req, res) => {
 }
 
 exports.updateMovie = (req, res) => {
+    console.log(req.body.movie);
     Movie.findOne({
         where: {
-            id: req.body.id
+            id: req.body.movie.id
         }
     }).then(movie => {
-        if (movie.id == req.body.id) {
-            movie.title = req.body.title;
-            movie.year = req.body.year;
-            movie.description = req.body.description;
-            movie.length = req.body.length;
-            movie.prodCountry = req.body.prodCountry;
-            movie.path = req.body.path;
+        if (movie.id == req.body.movie.id) {
+            movie.title = req.body.movie.title;
+            movie.description = req.body.movie.description;
+            movie.length = req.body.movie.length;
+            movie.year = req.body.movie.year;
+            movie.prodCountry = req.body.movie.prodCountry;
+            movie.titleImage = req.body.movie.titleImage;
+            movie.mainImage = req.body.movie.mainImage;
+            movie.trailer = req.body.movie.trailer;
+            movie.movieContent = req.body.movie.movieContent;
             movie.save().then(movie => {
                 res.status(200).send({ message: `movie with id: ${movie.id} was updated successfully` });
                 return 
@@ -116,6 +120,7 @@ exports.updateMovie = (req, res) => {
 }
 
 exports.deleteMovie = (req, res) => {
+    // console.log(req.body.id)
     Movie.destroy({
         where: {
             id: req.body.id
