@@ -10,7 +10,7 @@ router.post('/add',
 );
 
 router.post('/buy',
-    authJWT.verifyToken,
+    //authJWT.verifyToken,
     controller.buyPlan
 );
 

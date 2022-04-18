@@ -39,7 +39,6 @@ exports.signin = (req, res) => {
         var token = jwt.sign({ id: user.id }, config.secret, {
             expiresIn: 3600 // 24 hours
         });   
-             
         res.status(200).send
          
         ({        
@@ -47,6 +46,7 @@ exports.signin = (req, res) => {
             firstName: user.firstName,
             lastName: user.lastName,
             email: user.email,
+            isAdmin: user.isAdmin,
             accessToken: token            
         })
     }).catch(err => {

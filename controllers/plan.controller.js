@@ -18,11 +18,11 @@ exports.buyPlan = (req, res, next) => {
     //needed for expiresAt attribute
     let date = new Date();
     OrderedPlan.create({
-        UserId: req.userId,
-        PlanId: req.body.planId,
-        pricePaid: req.body.price,
+        UserId: req.body.user.id,
+        PlanId: req.body.plan.id,
+        pricePaid: req.body.plan.price,
         // adds duration months to current date in order to set the orderedplan expiration date
-        expiresAt: new Date(date.setMonth(date.getMonth() + req.body.duration))
+        expiresAt: new Date(date.setMonth(date.getMonth() + req.body.plan.duration))
     }).then(orderedPlan => {
         res.status(200).send({ message: "Plan was ordered successfully" });
     }).catch(err => {
