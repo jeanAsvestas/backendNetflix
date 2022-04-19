@@ -21,10 +21,10 @@ router.post('/add',
 );
 
 
-router.get('/watch/:id',
+router.post('/watch/:id',
     //authJWT.verifyToken,
     //contr.readPlan,
-    //controller.watchedMovie,
+    controller.watchedMovie,
     controller.moviePath
 );
 
@@ -52,6 +52,11 @@ router.post('/delete',
     //authJWT.isAdmin,
     controller.deleteMovie
 );
+
+router.get('/list/:userId',
+    //authJWT.verifyToken,
+    controller.listMovies
+)
 
 
 

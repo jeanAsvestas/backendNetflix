@@ -1,6 +1,7 @@
 const db = require("../models/index");
 const movie = require("../models/movie");
 const Movie = db.sequelize.models.Movie;
+const User = db.sequelize.models.User;
 const Category = db.sequelize.models.Category;
 const WatchedMovie = db.sequelize.models.WatchedMovie
 
@@ -36,9 +37,9 @@ exports.addMovie = (req, res) => {
 }
 
 exports.watchedMovie = (req, res, next) => {
-    console.log(req.userId);
+    console.log(req.body);
     WatchedMovie.create({
-        UserId: req.userId,
+        UserId: req.body.userId,
         MovieId: req.body.movieId
     }).then(watchedmovie => {
         next();
@@ -136,6 +137,28 @@ exports.deleteMovie = (req, res) => {
     }
     ).catch(err => {
         res.status(500).send({message: err.message});
+    })
+}
+
+exports.listMovies = (req, res) => {
+    // console.log(req.params)
+    findAll({
+        include: [{
+            model: User,
+            where: {
+                id: req.params.userId
+            }
+        },
+        { model: Category }
+        ],
+
+    }).then((movies) => {
+        // console.log(movies)
+        res.status(200).send(movies)
+        return;
+    }).catch(err => {
+        res.status(500).send({ message: err.message });
+        return;
     })
 }
 
