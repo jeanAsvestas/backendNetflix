@@ -26,6 +26,9 @@ router.post('/read',
     //authJWT.isAdmin,
     controller.readAllPlans
 );
+router.get('/readuserplan/:id',
+    controller.getUserPlans
+)
 
 router.post('/update',
     //authJWT.verifyToken,

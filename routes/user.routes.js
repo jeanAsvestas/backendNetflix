@@ -14,6 +14,8 @@ router.use(function (req, res, next) {
     });
 router.get("/all", controller.getAllUsers);
 
+router.get("/getone/:id", controller.getOneUser);
+
 
 // router.get(
 //       "/user",

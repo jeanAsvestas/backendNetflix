@@ -142,7 +142,7 @@ exports.deleteMovie = (req, res) => {
 
 exports.listMovies = (req, res) => {
     // console.log(req.params)
-    findAll({
+    Movie.findAll({
         include: [{
             model: User,
             where: {

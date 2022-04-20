@@ -1,6 +1,7 @@
 const db = require("../models/index");
 const Plan = db.sequelize.models.Plan;
 const OrderedPlan = db.sequelize.models.OrderedPlan;
+const User = db.sequelize.models.User;
 
 exports.addPlan = (req, res) => {
     Plan.create({
@@ -56,6 +57,29 @@ exports.readAllPlans = (req, res) => {
         res.status(500).send({message: err.message});
     });
 }
+exports.getUserPlans = (req, res) => {
+    OrderedPlan.findAll({
+        where: {
+            UserId: req.params.id
+        }
+    }).then((orderedPlans) => {
+        res.status(200).json({ orderedPlans });
+    }).catch(err => {
+        res.status(500).send({ message: err.message });
+    });
+}
+// exports.getUserPlans = (req, res) => {
+//     User.findAll({
+//         where: {
+//             id: req.params.id
+//         },
+//         include: [{ model: Plan }]
+//     }).then((orderedPlans) => {
+//         res.status(200).json({ orderedPlans });
+//     }).catch(err => {
+//         res.status(500).send({ message: err.message });
+//     });
+// }
 
 exports.updatePlan = (req, res) => {
     Plan.findOne({

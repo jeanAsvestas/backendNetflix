@@ -12,6 +12,20 @@ exports.getAllUsers = (req, res) => {
         });
 }
 
+exports.getOneUser = (req, res) => {
+    User.findOne({
+        where: {
+            id: req.params.id
+        }
+    }).then(user => {
+        //console.log(users)
+        res.status(200).json(user);
+    })
+        .catch(err => {
+            res.status(500).json(err);
+        });
+}
+
 
 
 
