@@ -1,4 +1,5 @@
 const db = require("../models/index");
+const Plan = db.sequelize.models.Plan;
 const User = db.sequelize.models.User;
 
 exports.getAllUsers = (req, res) => {
@@ -16,6 +17,8 @@ exports.getOneUser = (req, res) => {
     User.findOne({
         where: {
             id: req.params.id
+        }, include: {
+            model: Plan
         }
     }).then(user => {
         //console.log(users)
