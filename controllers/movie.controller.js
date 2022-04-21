@@ -89,7 +89,7 @@ exports.readMovies = (req, res) => {
 }
 
 exports.updateMovie = (req, res) => {
-    console.log(req.body.movie);
+    // console.log(req.body.movie);
     Movie.findOne({
         where: {
             id: req.body.movie.id
