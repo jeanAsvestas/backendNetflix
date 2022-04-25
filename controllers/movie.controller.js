@@ -162,6 +162,25 @@ exports.listMovies = (req, res) => {
     })
 }
 
+exports.getTenLastMovies = (req, res) => {
+    Movie.findAll({
+        include: [
+            { model: Category }
+        ],
+        limit: 12,
+        order: [
+            ['createdAt', 'DESC']
+        ]
+    }).then((movies) => {
+        // console.log(movies)
+        res.status(200).send(movies)
+        return;
+    }).catch(err => {
+        res.status(500).send({ message: err.message });
+        return;
+    })
+}
+
 
 
 

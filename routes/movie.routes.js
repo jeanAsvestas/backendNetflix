@@ -28,6 +28,9 @@ router.post('/edit/:id',
 router.post('/read',
     controller.readMovies
 );
+router.post('/readten',
+    controller.getTenLastMovies
+);
 
 
 // Update a movie

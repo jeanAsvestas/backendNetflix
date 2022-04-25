@@ -39,6 +39,7 @@ exports.readPlan = (req, res, next) => {
         },
         order: [['createdAt', 'DESC']]
     }).then(ordered => {
+
         if (new Date() > ordered[0].expiresAt) {
             res.send({ message: "You need to refresh your subscription" })
             return;
@@ -46,6 +47,10 @@ exports.readPlan = (req, res, next) => {
         req.body.ordered = ordered[0]
         next();
     }).catch(err => {
+        if (err.message == "Cannot read properties of undefined (reading 'expiresAt')") {
+            res.send({ message: "You need to refresh your subscription" })
+            return;
+        }
         res.status(500).send({ message: err.message })
     });
 }
