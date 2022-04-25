@@ -1,8 +1,27 @@
-npm i, npm run start, localhost:4000
+# Getting Started with backend Netflix clone 
+git clone the following repository: 
 
-register/login operational χωρίς JWT, γι αυτό μετά το login, για να εκτελέσεις λειτουργίες 
-ακολουθείς τα κουμπιά και δεν γράφεις τα path στον browser.
+Execute:
+    npm i
 
-προς το παρόν ο user είναι customer & admin.
+Setup a MySQL database and set its details in config/config.json under the development object.
 
-στο add movie, sto path πρέπει να μπει το video id από το youtube vid για να παίξει δυναμικά.
+Execute following commands to create the tables in the database:
+    npx sequelize db:migrate or
+    npx sequelize-cli db:migrate
+
+Execute following commands to seed some starting data in the tables:
+    npx sequelize db:seed --seed movie.js
+    npx sequelize db:seed --seed categories.js
+    npx sequelize db:seed --seed movieCategories.js
+
+Execute following command:
+    npm start
+
+Runs the app in the development mode.
+Open [http://localhost:4000](http://localhost:4000) to view it in the browser.
+
+
+(Requires frontend Netflix app to run in order to fetch data)
+
+Download it here: 

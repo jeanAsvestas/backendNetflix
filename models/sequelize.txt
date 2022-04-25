@@ -42,9 +42,9 @@ Movie.belongsToMany(models.User, { through: models.WatchedMovie });
      Plan.belongsToMany(models.User, { through: models.OrderedPlan });
 
 
-     User.belongsToMany(models.Plan, { through: models.OrderedPlan });
+      User.belongsToMany(models.Plan, { through: models.OrderedPlan });
       User.belongsToMany(models.Movie, { through: models.WatchedMovie });
-WatchedMovie
+      WatchedMovie
       id: {
       allowNull: false,
       autoIncrement: true,
