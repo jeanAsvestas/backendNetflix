@@ -1,5 +1,6 @@
 # Getting Started with backend Netflix clone 
-git clone the following repository: 
+
+git clone the following repository: https://github.com/jeanAsvestas/backendNetflix.git
 
 Execute:
     npm i
@@ -24,4 +25,4 @@ Open [http://localhost:4000](http://localhost:4000) to view it in the browser.
 
 (Requires frontend Netflix app to run in order to fetch data)
 
-Download it here: 
+Download it here: https://github.com/jeanAsvestas/frontendNetflix.git
