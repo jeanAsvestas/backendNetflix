@@ -5,17 +5,20 @@ git clone the following repository: https://github.com/jeanAsvestas/backendNetfl
 Execute:
     npm i
 
+If you want to use a local database follow the following:
+
 Setup a MySQL database and set its details in config/config.json under the development object.
 
-Execute following commands to create the tables in the database:
-    npx sequelize db:migrate or
-    npx sequelize-cli db:migrate
+        Execute following commands to create the tables in the database:
+            npx sequelize db:migrate or
+            npx sequelize-cli db:migrate
 
-Execute following commands to seed some starting data in the tables:
-    npx sequelize db:seed --seed movie.js
-    npx sequelize db:seed --seed categories.js
-    npx sequelize db:seed --seed movieCategories.js
+        Execute following commands to seed some starting data in the tables:
+            npx sequelize db:seed --seed movie.js
+            npx sequelize db:seed --seed categories.js
+            npx sequelize db:seed --seed movieCategories.js
 
+Continue here if you want to use the default database
 Execute following command:
     npm start
 
