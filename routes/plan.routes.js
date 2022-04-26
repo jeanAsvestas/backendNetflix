@@ -23,7 +23,6 @@ router.post('/check',
 
 router.post('/read',
     authJWT.verifyToken,
-    authJWT.isAdmin,
     controller.readAllPlans
 );
 router.get('/readuserplan/:id',
