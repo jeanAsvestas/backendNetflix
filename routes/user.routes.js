@@ -17,16 +17,5 @@ router.get("/all", controller.getAllUsers);
 router.get("/getone/:id", controller.getOneUser);
 
 
-// router.get(
-//       "/user",
-//   authJwt.verifyToken,
-//       controller.userBoard
-//     );
-// router.get(
-//       "/admin",
-//   authJwt.verifyToken, authJwt.isAdmin,
-//       controller.adminBoard
-//     );
-
 
 module.exports = router;

@@ -5,8 +5,6 @@ const db = require("../models/index");
 const User = db.sequelize.models.User;
 
 verifyToken = (req, res, next) => {
-    //console.log(req);
-    //let token = req.headers['x-access-token'];  //setup for our front end
     let token = req.headers.authorization.split(' ')[1]; //setup for postman
     if (!token) {
         return res.status(401).send({

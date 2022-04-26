@@ -3,6 +3,7 @@ const Plan = db.sequelize.models.Plan;
 const OrderedPlan = db.sequelize.models.OrderedPlan;
 const User = db.sequelize.models.User;
 
+// Add a plan
 exports.addPlan = (req, res) => {
     Plan.create({
         name: req.body.name,
@@ -15,6 +16,7 @@ exports.addPlan = (req, res) => {
     });
 }
 
+// Buy a plan
 exports.buyPlan = (req, res, next) => {
     //needed for expiresAt attribute
     let date = new Date();
@@ -31,6 +33,8 @@ exports.buyPlan = (req, res, next) => {
     });
 }
 
+
+// Select user plans and checks if the subscription is active 
 exports.readPlan = (req, res, next) => {
     OrderedPlan.findAll({
         limit: 1,
@@ -55,6 +59,7 @@ exports.readPlan = (req, res, next) => {
     });
 }
 
+// Selects all plans
 exports.readAllPlans = (req, res) => {
     Plan.findAll().then((plans) => {
         res.status(200).send({plans});
@@ -62,6 +67,8 @@ exports.readAllPlans = (req, res) => {
         res.status(500).send({message: err.message});
     });
 }
+
+// Selects all user plans
 exports.getUserPlans = (req, res) => {
     OrderedPlan.findAll({
         where: {
@@ -73,19 +80,9 @@ exports.getUserPlans = (req, res) => {
         res.status(500).send({ message: err.message });
     });
 }
-// exports.getUserPlans = (req, res) => {
-//     User.findAll({
-//         where: {
-//             id: req.params.id
-//         },
-//         include: [{ model: Plan }]
-//     }).then((orderedPlans) => {
-//         res.status(200).json({ orderedPlans });
-//     }).catch(err => {
-//         res.status(500).send({ message: err.message });
-//     });
-// }
 
+
+// Update a plan
 exports.updatePlan = (req, res) => {
     Plan.findOne({
         where: {
@@ -98,11 +95,8 @@ exports.updatePlan = (req, res) => {
             plan.price = req.body.price;
             plan.save().then((plan) => {
                 res.status(200).send({ message: `Plan with id: ${plan.id} was updated successfully` })
-                //return;
             }).catch(err => {
                 res.status(500).send({ message: err.message });
-                //return;
-
             })
         } else {
             res.status(500).send({ message: `An unexpected error was occured with updating plab with id ${plan.id}` });
@@ -113,6 +107,7 @@ exports.updatePlan = (req, res) => {
     });
 }
 
+// Delete a plan
 exports.deletePlan = (req, res) => {
     Plan.destroy({
         where: {

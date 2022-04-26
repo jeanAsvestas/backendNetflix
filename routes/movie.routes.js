@@ -43,7 +43,7 @@ router.post('/update',
 // Delete a movie
 router.post('/delete',
     authJWT.verifyToken,
-    //authJWT.isAdmin,
+    authJWT.isAdmin,
     controller.deleteMovie
 );
 

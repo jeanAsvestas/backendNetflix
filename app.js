@@ -6,12 +6,6 @@ var logger = require('morgan');
 const cors = require("cors");
 
 
-
-
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var loginRouter = require('./routes/login');
-var registerRouter = require('./routes/register');
 var planRouter = require('./routes/plan.routes')
 var movieRouter = require('./routes/movie.routes');
 var authRouter = require ('./routes/auth.routes')
@@ -37,14 +31,9 @@ var corsOptions = {
 };
 app.use(cors(corsOptions));
 
-
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/login', loginRouter);
-app.use('/register', registerRouter);
 app.use('/api/plan', planRouter);
 app.use('/api/movie', movieRouter);
-app.use('/api/user', userRouter);  // not active 
+app.use('/api/user', userRouter);  
 app.use('/api/auth', authRouter);
 app.use('/api/category', categoryRouter);
 app.use('/api/moviecategory', moviecategoryRouter);
@@ -53,10 +42,6 @@ app.use('/api/moviecategory', moviecategoryRouter);
 app.use(function(req, res, next) {
   next(createError(404));
 });
-
-
-
-
 
 // error handler
 app.use(function(err, req, res, next) {

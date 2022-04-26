@@ -2,10 +2,10 @@ const db = require("../models/index");
 const Plan = db.sequelize.models.Plan;
 const User = db.sequelize.models.User;
 
+// Select all users
 exports.getAllUsers = (req, res) => {
     User.findAll()
         .then(users => {
-            //console.log(users)
             res.status(200).json(users);
         })
         .catch(err => {
@@ -13,6 +13,7 @@ exports.getAllUsers = (req, res) => {
         });
 }
 
+// Select a specific user
 exports.getOneUser = (req, res) => {
     User.findOne({
         where: {
@@ -21,7 +22,6 @@ exports.getOneUser = (req, res) => {
             model: Plan
         }
     }).then(user => {
-        //console.log(users)
         res.status(200).json(user);
     })
         .catch(err => {
@@ -33,14 +33,3 @@ exports.getOneUser = (req, res) => {
 
 
 
-// exports.allAccess = (req, res) => {
-//     res.status(200).send("Public Content.");
-// };
-
-// exports.userBoard = (req, res) => {
-//     res.status(200).send("User Content.");
-// };
-
-// exports.adminBoard = (req, res) => {
-//     res.status(200).send("Admin Content.");
-// };

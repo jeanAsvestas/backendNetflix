@@ -12,15 +12,7 @@ router.use(function (req,res,next){
     next();
 });
 
-//not for api
-router.get('/signin', function(req,res){
-    res.render('login')
-});
 
-//not for api
-router.get("/signup", function (req,res){    
-    res.render('register')
-});
 
 router.post('/signup', 
     verifySignUp.checkDuplicateUserEmail, 

@@ -5,12 +5,12 @@ const controller = require('../controllers/plan.controller')
 const authJWT = require('../middlewares/authJWT')
 
 router.post('/add', 
-    //authJWT.verifyToken,
+    authJWT.verifyToken,
     controller.addPlan    
 );
 
 router.post('/buy',
-    //authJWT.verifyToken,
+    authJWT.verifyToken,
     controller.buyPlan
 );
 
@@ -22,8 +22,8 @@ router.post('/check',
 );
 
 router.post('/read',
-    //authJWT.verifyToken,
-    //authJWT.isAdmin,
+    authJWT.verifyToken,
+    authJWT.isAdmin,
     controller.readAllPlans
 );
 router.get('/readuserplan/:id',
@@ -31,14 +31,14 @@ router.get('/readuserplan/:id',
 )
 
 router.post('/update',
-    //authJWT.verifyToken,
-    //authJWT.isAdmin,
+    authJWT.verifyToken,
+    authJWT.isAdmin,
     controller.updatePlan
 );
 
 router.post('/delete',
-    //authJWT.verifyToken,
-    //authJWT.isAdmin,
+    authJWT.verifyToken,
+    authJWT.isAdmin,
     controller.deletePlan
 );
 

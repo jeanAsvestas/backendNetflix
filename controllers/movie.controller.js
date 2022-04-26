@@ -5,8 +5,8 @@ const User = db.sequelize.models.User;
 const Category = db.sequelize.models.Category;
 const WatchedMovie = db.sequelize.models.WatchedMovie
 
+// Add a movie
 exports.addMovie = (req, res) => {
-    //console.log(req.body.movie.mainImage)
     Movie.create({
         title: req.body.movie.title,
         description: req.body.movie.description,
@@ -18,16 +18,6 @@ exports.addMovie = (req, res) => {
         mainImage: req.body.movie.mainImage,
         trailer: req.body.movie.trailer,
         movieContent: req.body.movie.movieContent
-        // title: req.body.title,
-        // description: req.body.description,
-        // length: `${req.body.length.split(":")[0]}h ${req.body.length.split(":")[1]}m`,
-        // year: req.body.year,
-        // prodCountry: req.body.prodCountry,
-        // titleImage: req.body.titleImage,
-        // trailerImage: req.body.trailerImage,
-        // //mainImage: req.body.mainImage[0].name,
-        // trailer: req.body.trailer,
-        // movieContent: req.body.movieContent
     }).then(movie => {
         res.send({ message: "Movie was added successfully!" });
     }).catch(err => {
@@ -36,8 +26,8 @@ exports.addMovie = (req, res) => {
     });
 }
 
+// Create a record into watchedMovie table with a movie that a user has watched 
 exports.watchedMovie = (req, res, next) => {
-    console.log(req.body);
     WatchedMovie.create({
         UserId: req.body.userId,
         MovieId: req.body.movieId
@@ -48,8 +38,8 @@ exports.watchedMovie = (req, res, next) => {
     });
 }
 
+// Select movie path of a specific movie
 exports.moviePath = (req, res) => {
-    console.log(req.params.id);
     Movie.findOne({
         where: {
             id: req.params.id
@@ -61,6 +51,8 @@ exports.moviePath = (req, res) => {
     });
 }
 
+
+// Select movies
 exports.readMovies = (req, res) => {
     if (req.body.movie && req.body.movie != "All") {
         Movie.findAll({
@@ -88,8 +80,8 @@ exports.readMovies = (req, res) => {
     }
 }
 
+// Update a movie
 exports.updateMovie = (req, res) => {
-    // console.log(req.body.movie);
     Movie.findOne({
         where: {
             id: req.body.movie.id
@@ -120,8 +112,8 @@ exports.updateMovie = (req, res) => {
     });
 }
 
+// Delete a movie
 exports.deleteMovie = (req, res) => {
-    // console.log(req.body.id)
     Movie.destroy({
         where: {
             id: req.body.id
@@ -140,8 +132,8 @@ exports.deleteMovie = (req, res) => {
     })
 }
 
+// Select user movies
 exports.listMovies = (req, res) => {
-    // console.log(req.params)
     Movie.findAll({
         include: [{
             model: User,
@@ -153,7 +145,6 @@ exports.listMovies = (req, res) => {
         ],
 
     }).then((movies) => {
-        // console.log(movies)
         res.status(200).send(movies)
         return;
     }).catch(err => {
@@ -162,6 +153,8 @@ exports.listMovies = (req, res) => {
     })
 }
 
+
+// Select last added movies
 exports.getTenLastMovies = (req, res) => {
     Movie.findAll({
         include: [
@@ -172,7 +165,6 @@ exports.getTenLastMovies = (req, res) => {
             ['createdAt', 'DESC']
         ]
     }).then((movies) => {
-        // console.log(movies)
         res.status(200).send(movies)
         return;
     }).catch(err => {
